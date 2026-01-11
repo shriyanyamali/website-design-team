@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MindMatters",
-  description: "Created with v0",
+  description: "BPA Event 435",
   generator: "v0.app",
   icons: {
-    icon: "/icon.svg",
+    icon: "/favicon.ico",
   },
 }
 
