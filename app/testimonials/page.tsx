@@ -166,7 +166,7 @@ export default function TestimonialsPage() {
               className="text-center mb-16"
             >
               <h1 className="text-6xl pt-10 text-center">
-                Getting Help
+                Testimonials
               </h1>
             </motion.div>
           </div>
