@@ -141,7 +141,7 @@ export default function BlogPage() {
                 fontWeight: "500",
               }}
             >
-              Mental Health Resources
+              Mental Health Blog
             </h1>
             <p
               className="text-lg leading-7 text-[#404040] max-w-2xl"

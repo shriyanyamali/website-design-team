@@ -1,38 +1,46 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useRef, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import type React from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 type CaseStudy = {
-  id: string
-  company: string
-  logo: React.ReactNode
-  title: string
-  features: string[]
-  quote: string
-  attribution: string
-  accentColor: string
+  id: string;
+  company: string;
+  logo: React.ReactNode;
+  title: string;
+  features: string[];
+  quote: string;
+  attribution: string;
+  accentColor: string;
   cards: {
-    type: "slack" | "meeting" | "sentiment" | "notion" | "stripe" | "figma"
-    delay: number
-    zIndex: number
-  }[]
-}
+    type: "slack" | "meeting" | "sentiment" | "notion" | "stripe" | "figma";
+    delay: number;
+    zIndex: number;
+  }[];
+};
 const caseStudies: CaseStudy[] = [
   {
     id: "notion",
     company: "Clandestine",
     logo: (
-      <svg fill="none" height="48" viewBox="0 0 38 48" width="38" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 38 48"
+        width="38"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="m14.25 5c0 7.8701-6.37994 14.25-14.25 14.25v9.5h14.25v14.25h9.5c0-7.8701 6.3799-14.25 14.25-14.25v-9.5h-14.25v-14.25z"
           fill="#16b364"
         />
       </svg>
     ),
-    title: "Clandestine uses Auralink to understand how their teams collaborate in real-time.",
+    title:
+      "Clandestine uses MindMatters to understand how their teams collaborate in real-time.",
     features: ["Slack Calls", "Meeting Transcripts", "Sentiment Reports"],
-    quote: "Auralink gives us clarity on team alignment we never had before.",
+    quote:
+      "MindMatters gives us clarity on team alignment we never had before.",
     attribution: "Marie Chen, Head of Operations, Clandestine",
     accentColor: "#16b364",
     cards: [
@@ -52,7 +60,13 @@ const caseStudies: CaseStudy[] = [
     id: "cloudwatch",
     company: "Cloudwatch",
     logo: (
-      <svg fill="none" height="48" viewBox="0 0 192 48" width="192" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 192 48"
+        width="192"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <filter
           id="a"
           colorInterpolationFilters="sRGB"
@@ -63,7 +77,12 @@ const caseStudies: CaseStudy[] = [
           y="-3"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+          <feBlend
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            mode="normal"
+            result="shape"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -73,8 +92,15 @@ const caseStudies: CaseStudy[] = [
           <feOffset dy="-3" />
           <feGaussianBlur stdDeviation="1.5" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-          <feBlend in2="shape" mode="normal" result="effect1_innerShadow_3046_38742" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+          />
+          <feBlend
+            in2="shape"
+            mode="normal"
+            result="effect1_innerShadow_3046_38742"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -84,19 +110,38 @@ const caseStudies: CaseStudy[] = [
           <feOffset dy="3" />
           <feGaussianBlur stdDeviation="1.5" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0" />
-          <feBlend in2="effect1_innerShadow_3046_38742" mode="normal" result="effect2_innerShadow_3046_38742" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+          />
+          <feBlend
+            in2="effect1_innerShadow_3046_38742"
+            mode="normal"
+            result="effect2_innerShadow_3046_38742"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
           />
-          <feMorphology in="SourceAlpha" operator="erode" radius="1" result="effect3_innerShadow_3046_38742" />
+          <feMorphology
+            in="SourceAlpha"
+            operator="erode"
+            radius="1"
+            result="effect3_innerShadow_3046_38742"
+          />
           <feOffset />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.24 0" />
-          <feBlend in2="effect2_innerShadow_3046_38742" mode="normal" result="effect3_innerShadow_3046_38742" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.24 0"
+          />
+          <feBlend
+            in2="effect2_innerShadow_3046_38742"
+            mode="normal"
+            result="effect3_innerShadow_3046_38742"
+          />
         </filter>
         <g filter="url(#a)">
           <rect fill="url(#b)" height="48" rx="12" width="48" />
@@ -106,17 +151,41 @@ const caseStudies: CaseStudy[] = [
             d="m23.9995 14.25c5.3848 0 9.7505 4.3658 9.7505 9.7506s-4.3657 9.7505-9.7505 9.7505-9.7506-4.3657-9.7506-9.7505 4.3658-9.7506 9.7506-9.7506z"
             fill="#fff"
           />
-          <path d="m23.9995 18.0005c-3.3137 0-6 2.6863-6 6s2.6863 6 6 6 6-2.6863 6-6-2.6863-6-6-6z" fill="url(#d)" />
+          <path
+            d="m23.9995 18.0005c-3.3137 0-6 2.6863-6 6s2.6863 6 6 6 6-2.6863 6-6-2.6863-6-6-6z"
+            fill="url(#d)"
+          />
         </g>
-        <text fill="currentColor" fontFamily="Inter, sans-serif" fontSize="20" fontWeight="600" x="58" y="32">
+        <text
+          fill="currentColor"
+          fontFamily="Inter, sans-serif"
+          fontSize="20"
+          fontWeight="600"
+          x="58"
+          y="32"
+        >
           Cloudwatch
         </text>
         <defs>
-          <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="24" x2="24" y1="0" y2="48">
+          <linearGradient
+            id="b"
+            gradientUnits="userSpaceOnUse"
+            x1="24"
+            x2="24"
+            y1="0"
+            y2="48"
+          >
             <stop stopColor="#3b82f6" />
             <stop offset="1" stopColor="#1d4ed8" />
           </linearGradient>
-          <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="23.9995" x2="23.9995" y1="18.0005" y2="30.0005">
+          <linearGradient
+            id="d"
+            gradientUnits="userSpaceOnUse"
+            x1="23.9995"
+            x2="23.9995"
+            y1="18.0005"
+            y2="30.0005"
+          >
             <stop stopColor="#60a5fa" />
             <stop offset="1" stopColor="#3b82f6" />
           </linearGradient>
@@ -126,9 +195,11 @@ const caseStudies: CaseStudy[] = [
         </defs>
       </svg>
     ),
-    title: "Cloudwatch leverages Auralink to monitor cross-functional team dynamics across global offices.",
+    title:
+      "Cloudwatch leverages MindMatters to monitor cross-functional team dynamics across global offices.",
     features: ["Slack Calls", "Meeting Transcripts", "Sentiment Reports"],
-    quote: "With Auralink, we can see collaboration patterns that directly impact our product velocity.",
+    quote:
+      "With MindMatters, we can see collaboration patterns that directly impact our product velocity.",
     attribution: "Sarah Chen, VP Engineering, Cloudwatch",
     accentColor: "#3b82f6",
     cards: [
@@ -148,28 +219,27 @@ const caseStudies: CaseStudy[] = [
     id: "eightball",
     company: "EightBall",
     logo: (
-      <svg fill="none" height="48" viewBox="0 0 151 48" width="151" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 151 48"
+        width="151"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <g fill="#0A0D12">
           <path
             clipRule="evenodd"
             d="m20 44c11.0457 0 20-8.9543 20-20s-8.9543-20-20-20-20 8.9543-20 20 8.9543 20 20 20zm5-16c4.9706 0 9-4.0294 9-9s-4.0294-9-9-9-9 4.0294-9 9 4.0294 9 9 9z"
             fillRule="evenodd"
           />
-          
-          
-          
-          
-          
-          
-          
-          
-          
         </g>
       </svg>
     ),
-    title: "EightBall relies on Auralink to track team health metrics and async communication quality.",
+    title:
+      "EightBall relies on MindMatters to track team health metrics and async communication quality.",
     features: ["Slack Calls", "Sentiment Reports"],
-    quote: "Auralink transformed how we understand our remote-first culture.",
+    quote:
+      "MindMatters transformed how we understand our remote-first culture.",
     attribution: "Karri Saarinen, Co-founder, EightBall",
     accentColor: "#0A0D12",
     cards: [
@@ -189,7 +259,13 @@ const caseStudies: CaseStudy[] = [
     id: "coreos",
     company: "CoreOS",
     logo: (
-      <svg fill="none" height="48" viewBox="0 0 155 48" width="155" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        fill="none"
+        height="48"
+        viewBox="0 0 155 48"
+        width="155"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <filter
           id="a"
           colorInterpolationFilters="sRGB"
@@ -200,7 +276,12 @@ const caseStudies: CaseStudy[] = [
           y="-3"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+          <feBlend
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            mode="normal"
+            result="shape"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -210,8 +291,15 @@ const caseStudies: CaseStudy[] = [
           <feOffset dy="-3" />
           <feGaussianBlur stdDeviation="1.5" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-          <feBlend in2="shape" mode="normal" result="effect1_innerShadow_3046_38745" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+          />
+          <feBlend
+            in2="shape"
+            mode="normal"
+            result="effect1_innerShadow_3046_38745"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -221,19 +309,38 @@ const caseStudies: CaseStudy[] = [
           <feOffset dy="3" />
           <feGaussianBlur stdDeviation="1.5" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0" />
-          <feBlend in2="effect1_innerShadow_3046_38745" mode="normal" result="effect2_innerShadow_3046_38745" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.1 0"
+          />
+          <feBlend
+            in2="effect1_innerShadow_3046_38745"
+            mode="normal"
+            result="effect2_innerShadow_3046_38745"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
             type="matrix"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
           />
-          <feMorphology in="SourceAlpha" operator="erode" radius="1" result="effect3_innerShadow_3046_38745" />
+          <feMorphology
+            in="SourceAlpha"
+            operator="erode"
+            radius="1"
+            result="effect3_innerShadow_3046_38745"
+          />
           <feOffset />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.24 0" />
-          <feBlend in2="effect2_innerShadow_3046_38745" mode="normal" result="effect3_innerShadow_3046_38745" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.24 0"
+          />
+          <feBlend
+            in2="effect2_innerShadow_3046_38745"
+            mode="normal"
+            result="effect3_innerShadow_3046_38745"
+          />
         </filter>
         <filter
           id="b"
@@ -254,8 +361,15 @@ const caseStudies: CaseStudy[] = [
           <feOffset />
           <feGaussianBlur stdDeviation="0.375" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-          <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_innerShadow_3046_38745" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+          />
+          <feBlend
+            in2="BackgroundImageFix"
+            mode="normal"
+            result="effect1_innerShadow_3046_38745"
+          />
           <feColorMatrix
             in="SourceAlpha"
             result="hardAlpha"
@@ -265,8 +379,15 @@ const caseStudies: CaseStudy[] = [
           <feOffset dy="1.5" />
           <feGaussianBlur stdDeviation="1.5" />
           <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic" />
-          <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0" />
-          <feBlend in2="effect1_innerShadow_3046_38745" mode="normal" result="effect2_innerShadow_3046_38745" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+          />
+          <feBlend
+            in2="effect1_innerShadow_3046_38745"
+            mode="normal"
+            result="effect2_innerShadow_3046_38745"
+          />
         </filter>
         <g filter="url(#a)">
           <rect fill="#101828" height="48" rx="12" width="48" />
@@ -281,9 +402,11 @@ const caseStudies: CaseStudy[] = [
         </g>
       </svg>
     ),
-    title: "CoreOS uses Auralink to ensure design and engineering teams stay in sync during sprints.",
+    title:
+      "CoreOS uses MindMatters to ensure design and engineering teams stay in sync during sprints.",
     features: ["Meeting Transcripts", "Sentiment Reports"],
-    quote: "The sentiment analysis helps us identify friction points before they become blockers.",
+    quote:
+      "The sentiment analysis helps us identify friction points before they become blockers.",
     attribution: "Noah Levin, VP Engineering, CoreOS",
     accentColor: "#155eef",
     cards: [
@@ -299,31 +422,43 @@ const caseStudies: CaseStudy[] = [
       },
     ],
   },
-]
-const FeatureBadge = ({
-  name,
-}: {
-  name: string
-}) => {
+];
+const FeatureBadge = ({ name }: { name: string }) => {
   const getIcon = (featureName: string) => {
     if (featureName.includes("Slack")) {
       return (
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 opacity-50">
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4 opacity-50"
+        >
           <path
             d="M6 2C6 1.44772 5.55228 1 5 1C4.44772 1 4 1.44772 4 2V6C4 6.55228 4.44772 7 5 7C5.55228 7 6 6.55228 6 6V2Z"
             fill="#E01E5A"
           />
-          <path d="M10 6C10.5523 6 11 5.55228 11 5C11 4.44772 10.55228 4 10 4H6V6H10Z" fill="#36C5F0" />
+          <path
+            d="M10 6C10.5523 6 11 5.55228 11 5C11 4.44772 10.55228 4 10 4H6V6H10Z"
+            fill="#36C5F0"
+          />
           <path
             d="M14 5C14 4.44772 13.5523 4 13 4C12.4477 4 12 4.44772 12 5V9C12 9.55228 12.4477 10 13 10C13.5523 10 14 9.55228 14 9V5Z"
             fill="#2EB67D"
           />
-          <path d="M6 10C5.44772 10 5 10.4477 5 11C5 11.5523 5.44772 12 6 12H10V10H6Z" fill="#ECB22E" />
+          <path
+            d="M6 10C5.44772 10 5 10.4477 5 11C5 11.5523 5.44772 12 6 12H10V10H6Z"
+            fill="#ECB22E"
+          />
         </svg>
-      )
+      );
     } else if (featureName.includes("Meeting")) {
       return (
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 opacity-50">
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4 opacity-50"
+        >
           <path
             d="M2 4C2 3.44772 2.44772 3 3 3H9C9.55228 3 10 3.44772 10 4V10C10 10.55228 9.55228 11 9 11H3C2.44772 11 2 10.55228 2 10V4Z"
             stroke="#5E6AD2"
@@ -339,10 +474,15 @@ const FeatureBadge = ({
             strokeLinejoin="round"
           />
         </svg>
-      )
+      );
     } else if (featureName.includes("Sentiment")) {
       return (
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 opacity-50">
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4 opacity-50"
+        >
           <path
             d="M3 9L5 11L8 8L13 13"
             stroke="#10B981"
@@ -358,62 +498,58 @@ const FeatureBadge = ({
             strokeLinejoin="round"
           />
         </svg>
-      )
+      );
     }
-    return null
-  }
+    return null;
+  };
   return (
     <div className="flex items-center gap-2 bg-white/75 shadow-sm border border-black/5 rounded-lg px-2 py-1 text-sm font-medium text-foreground">
       {getIcon(name)}
       {name}
     </div>
-  )
-}
+  );
+};
 const SlackCallCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
-  return (
-    null
-  )
-}
+  return null;
+};
 const MeetingTranscriptCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
-  return (
-    null
-  )
-}
+  return null;
+};
 const SentimentReportCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
-  return null
-}
+  return null;
+};
 const NotionCollaborationCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
   return (
     <motion.div
@@ -435,7 +571,8 @@ const NotionCollaborationCard = ({
       className="absolute w-[380px] rounded-xl p-6 backdrop-blur-xl"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.85)",
-        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
+        boxShadow:
+          "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
         filter: "drop-shadow(0 4px 6px rgba(30, 30, 44, 0.15))",
         transform: "translate(-200px, -80px)",
         zIndex,
@@ -443,7 +580,9 @@ const NotionCollaborationCard = ({
     >
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-foreground">Team Alignment</h4>
+          <h4 className="text-sm font-semibold text-foreground">
+            Team Alignment
+          </h4>
           <span className="text-xs text-muted-foreground">Real-time</span>
         </div>
 
@@ -475,22 +614,23 @@ const NotionCollaborationCard = ({
 
         <div className="pt-3 border-t border-border/50">
           <div className="text-xs text-muted-foreground">
-            <span className="font-semibold text-foreground">12</span> active conversations
+            <span className="font-semibold text-foreground">12</span> active
+            conversations
           </div>
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const StripeGlobalCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
   return (
     <motion.div
@@ -512,7 +652,8 @@ const StripeGlobalCard = ({
       className="absolute w-[400px] rounded-xl p-6 backdrop-blur-xl"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.85)",
-        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
+        boxShadow:
+          "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
         filter: "drop-shadow(0 4px 6px rgba(30, 30, 44, 0.15))",
         transform: "translate(-180px, -60px)",
         zIndex,
@@ -520,25 +661,35 @@ const StripeGlobalCard = ({
     >
       <div className="flex flex-col space-y-5">
         <div className="flex items-center justify-between">
-          <h4 className="text-sm font-semibold text-foreground">Global Team Dynamics</h4>
+          <h4 className="text-sm font-semibold text-foreground">
+            Global Team Dynamics
+          </h4>
           <span className="text-xs text-muted-foreground">Last 24h</span>
         </div>
 
         <div className="grid grid-cols-3 gap-3">
           <div className="text-center p-3 bg-muted/20 rounded-lg">
             <div className="text-2xl font-bold text-foreground">SF</div>
-            <div className="text-xs text-muted-foreground mt-1">San Francisco</div>
-            <div className="text-xs font-semibold text-green-600 mt-2">High</div>
+            <div className="text-xs text-muted-foreground mt-1">
+              San Francisco
+            </div>
+            <div className="text-xs font-semibold text-green-600 mt-2">
+              High
+            </div>
           </div>
           <div className="text-center p-3 bg-muted/20 rounded-lg">
             <div className="text-2xl font-bold text-foreground">DUB</div>
             <div className="text-xs text-muted-foreground mt-1">Dublin</div>
-            <div className="text-xs font-semibold text-blue-600 mt-2">Active</div>
+            <div className="text-xs font-semibold text-blue-600 mt-2">
+              Active
+            </div>
           </div>
           <div className="text-center p-3 bg-muted/20 rounded-lg">
             <div className="text-2xl font-bold text-foreground">SG</div>
             <div className="text-xs text-muted-foreground mt-1">Singapore</div>
-            <div className="text-xs font-semibold text-purple-600 mt-2">Peak</div>
+            <div className="text-xs font-semibold text-purple-600 mt-2">
+              Peak
+            </div>
           </div>
         </div>
 
@@ -548,22 +699,25 @@ const StripeGlobalCard = ({
             <span className="font-semibold text-foreground">+28%</span>
           </div>
           <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
-            <div className="h-full rounded-full" style={{ width: "87%", backgroundColor: accentColor }} />
+            <div
+              className="h-full rounded-full"
+              style={{ width: "87%", backgroundColor: accentColor }}
+            />
           </div>
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const FigmaSprintCard = ({
   accentColor,
   delay,
   zIndex,
 }: {
-  accentColor: string
-  delay: number
-  zIndex: number
+  accentColor: string;
+  delay: number;
+  zIndex: number;
 }) => {
   return (
     <motion.div
@@ -585,7 +739,8 @@ const FigmaSprintCard = ({
       className="absolute w-[380px] rounded-xl p-6 backdrop-blur-xl"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.85)",
-        boxShadow: "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
+        boxShadow:
+          "inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.12)",
         filter: "drop-shadow(0 4px 6px rgba(30, 30, 44, 0.15))",
         transform: "translate(-190px, -70px)",
         zIndex,
@@ -599,11 +754,21 @@ const FigmaSprintCard = ({
               style={{ backgroundColor: accentColor }}
             >
               <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
-                <rect x="3" y="3" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                <rect
+                  x="3"
+                  y="3"
+                  width="10"
+                  height="10"
+                  rx="2"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
               </svg>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground">Sprint Planning</h4>
+              <h4 className="text-sm font-semibold text-foreground">
+                Sprint Planning
+              </h4>
               <p className="text-xs text-muted-foreground">Week 3 • Day 2</p>
             </div>
           </div>
@@ -611,7 +776,9 @@ const FigmaSprintCard = ({
 
         <div className="space-y-3">
           <div className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">
-            <span className="text-sm text-foreground">Design handoff clarity</span>
+            <span className="text-sm text-foreground">
+              Design handoff clarity
+            </span>
             <div className="flex items-center gap-2">
               <div className="w-16 h-1.5 bg-muted rounded-full overflow-hidden">
                 <div className="h-full bg-green-500" style={{ width: "94%" }} />
@@ -646,47 +813,49 @@ const FigmaSprintCard = ({
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 export const CaseStudiesCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null)
-  const currentStudy = caseStudies[currentIndex]
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const currentStudy = caseStudies[currentIndex];
   const startAutoPlay = () => {
-    if (autoPlayRef.current) clearInterval(autoPlayRef.current)
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     autoPlayRef.current = setInterval(() => {
-      nextSlide()
-    }, 5000)
-  }
+      nextSlide();
+    }, 5000);
+  };
   const stopAutoPlay = () => {
     if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current)
-      autoPlayRef.current = null
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = null;
     }
-  }
+  };
   useEffect(() => {
     if (isAutoPlaying) {
-      startAutoPlay()
+      startAutoPlay();
     } else {
-      stopAutoPlay()
+      stopAutoPlay();
     }
-    return () => stopAutoPlay()
-  }, [isAutoPlaying, currentIndex])
+    return () => stopAutoPlay();
+  }, [isAutoPlaying, currentIndex]);
   const nextSlide = () => {
-    setDirection(1)
-    setCurrentIndex((prev) => (prev + 1) % caseStudies.length)
-  }
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % caseStudies.length);
+  };
   const prevSlide = () => {
-    setDirection(-1)
-    setCurrentIndex((prev) => (prev - 1 + caseStudies.length) % caseStudies.length)
-  }
+    setDirection(-1);
+    setCurrentIndex(
+      (prev) => (prev - 1 + caseStudies.length) % caseStudies.length
+    );
+  };
   const goToSlide = (index: number) => {
-    setDirection(index > currentIndex ? 1 : -1)
-    setCurrentIndex(index)
-  }
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
@@ -700,7 +869,7 @@ export const CaseStudiesCarousel = () => {
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
     }),
-  }
+  };
   return (
     <div
       className="w-full min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center py-24 px-8"
@@ -726,7 +895,8 @@ export const CaseStudiesCarousel = () => {
               fontFamily: "var(--font-figtree), Figtree",
             }}
           >
-            See how leading teams use Auralink to gain clarity on collaboration and team alignment.
+            See how leading teams use MindMatters to gain clarity on
+            collaboration and team alignment.
           </p>
         </div>
 
@@ -862,26 +1032,58 @@ export const CaseStudiesCarousel = () => {
               >
                 {currentStudy.id === "notion" && (
                   <>
-                    <NotionCollaborationCard accentColor={currentStudy.accentColor} delay={0} zIndex={1} />
-                    <SlackCallCard accentColor={currentStudy.accentColor} delay={0.1} zIndex={2} />
+                    <NotionCollaborationCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0}
+                      zIndex={1}
+                    />
+                    <SlackCallCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0.1}
+                      zIndex={2}
+                    />
                   </>
                 )}
                 {currentStudy.id === "cloudwatch" && (
                   <>
-                    <StripeGlobalCard accentColor={currentStudy.accentColor} delay={0} zIndex={1} />
-                    <SlackCallCard accentColor={currentStudy.accentColor} delay={0.1} zIndex={2} />
+                    <StripeGlobalCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0}
+                      zIndex={1}
+                    />
+                    <SlackCallCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0.1}
+                      zIndex={2}
+                    />
                   </>
                 )}
                 {currentStudy.id === "eightball" && (
                   <>
-                    <MeetingTranscriptCard accentColor={currentStudy.accentColor} delay={0} zIndex={1} />
-                    <SlackCallCard accentColor={currentStudy.accentColor} delay={0.1} zIndex={2} />
+                    <MeetingTranscriptCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0}
+                      zIndex={1}
+                    />
+                    <SlackCallCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0.1}
+                      zIndex={2}
+                    />
                   </>
                 )}
                 {currentStudy.id === "coreos" && (
                   <>
-                    <FigmaSprintCard accentColor={currentStudy.accentColor} delay={0} zIndex={1} />
-                    <MeetingTranscriptCard accentColor={currentStudy.accentColor} delay={0.1} zIndex={2} />
+                    <FigmaSprintCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0}
+                      zIndex={1}
+                    />
+                    <MeetingTranscriptCard
+                      accentColor={currentStudy.accentColor}
+                      delay={0.1}
+                      zIndex={2}
+                    />
                   </>
                 )}
               </motion.div>
@@ -890,5 +1092,5 @@ export const CaseStudiesCarousel = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

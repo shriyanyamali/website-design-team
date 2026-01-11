@@ -1,29 +1,29 @@
-"use client"
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
-import { motion } from "framer-motion"
+"use client";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 type FooterLink = {
-  label: string
-  href: string
-}
+  label: string;
+  href: string;
+};
 
 type FooterSection = {
-  title: string
-  links: FooterLink[]
-}
+  title: string;
+  links: FooterLink[];
+};
 
 type FooterProps = {
-  companyName?: string
-  tagline?: string
-  sections?: FooterSection[]
+  companyName?: string;
+  tagline?: string;
+  sections?: FooterSection[];
   socialLinks?: {
-    twitter?: string
-    linkedin?: string
-    github?: string
-    email?: string
-  }
-  copyrightText?: string
-}
+    twitter?: string;
+    linkedin?: string;
+    github?: string;
+    email?: string;
+  };
+  copyrightText?: string;
+};
 
 const defaultSections: FooterSection[] = [
   {
@@ -66,22 +66,23 @@ const defaultSections: FooterSection[] = [
       { label: "Cookie Policy", href: "#cookies" },
     ],
   },
-]
+];
 
 export const Footer = ({
-  companyName = "Auralink",
+  companyName = "MindMatters",
   tagline = "The Intelligence Layer for Modern Communication",
   sections = defaultSections,
   socialLinks = {
     twitter: "https://twitter.com",
     linkedin: "https://linkedin.com",
     github: "https://github.com",
-    email: "hello@auralink.com",
+    email: "hello@MindMatters.com",
   },
   copyrightText,
 }: FooterProps) => {
-  const currentYear = new Date().getFullYear()
-  const copyright = copyrightText || `© ${currentYear} ${companyName}. All rights reserved.`
+  const currentYear = new Date().getFullYear();
+  const copyright =
+    copyrightText || `© ${currentYear} ${companyName}. All rights reserved.`;
   return (
     <footer className="w-full bg-[#fafafa] border-t border-[#e5e5e5]">
       <div className="max-w-[1200px] mx-auto px-8 py-16">
@@ -102,7 +103,10 @@ export const Footer = ({
               >
                 {companyName}
               </h3>
-              <p className="text-sm leading-5 text-[#666666] max-w-xs" style={{ fontFamily: "Figtree" }}>
+              <p
+                className="text-sm leading-5 text-[#666666] max-w-xs"
+                style={{ fontFamily: "Figtree" }}
+              >
                 {tagline}
               </p>
             </div>
@@ -155,7 +159,11 @@ export const Footer = ({
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="col-span-1"
             >
               <h4
@@ -190,7 +198,10 @@ export const Footer = ({
           className="pt-8 border-t border-[#e5e5e5]"
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-[#666666]" style={{ fontFamily: "Figtree" }}>
+            <p
+              className="text-sm text-[#666666]"
+              style={{ fontFamily: "Figtree" }}
+            >
               {copyright}
             </p>
             <div className="flex items-center gap-6">
@@ -213,5 +224,5 @@ export const Footer = ({
         </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};

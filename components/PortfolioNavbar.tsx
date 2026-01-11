@@ -7,13 +7,18 @@ import Link from "next/link";
 
 const navigationLinks = [
   {
-    name: "Scheduler",
-    href: "/scheduler",
+    name: "Resources",
+    href: "/resources",
     isExternal: true,
   },
   {
-    name: "Community",
-    href: "/community",
+    name: "Get Help",
+    href: "/get-help",
+    isExternal: true,
+  },
+  {
+    name: "Support",
+    href: "/support",
     isExternal: true,
   },
   {
@@ -22,9 +27,9 @@ const navigationLinks = [
     isExternal: true,
   },
   {
-    name: "Resources",
-    href: "#resources",
-    isExternal: false,
+    name: "Testimonials",
+    href: "/testimonials ",
+    isExternal: true,
   },
 ] as any[];
 
@@ -111,7 +116,7 @@ export const PortfolioNavbar = () => {
                   fontWeight: "800",
                 }}
               >
-                Auralink
+                MindMatters
               </span>
             </Link>
           </div>
@@ -123,9 +128,10 @@ export const PortfolioNavbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <button
+            <Link
               onClick={() => handleLinkClick("#contact")}
-              className="bg-[#156d95] text-white px-[18px] rounded-full text-base font-semibold hover:bg-[#156d95]/90 transition-all duration-200 hover:rounded-2xl shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
+              href="scheduler"
+              className="bg-[#156d95] border-2 border-white text-white px-[18px] rounded-full text-base font-semibold hover:bg-white hover:text-[#156d95] hover:border-[#156d95] transition-all duration-500 shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
               }}
@@ -136,9 +142,9 @@ export const PortfolioNavbar = () => {
                   fontWeight: "500",
                 }}
               >
-                Start Free Trial
+                Schedule a Session
               </span>
-            </button>
+            </Link>
           </div>
 
           <div className="md:hidden">

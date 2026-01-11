@@ -1,19 +1,19 @@
-"use client"
-import { motion } from "framer-motion"
-import { ArrowUpRight } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 type ProductTeaserCardProps = {
-  dailyVolume?: string
-  dailyVolumeLabel?: string
-  headline?: string
-  subheadline?: string
-  description?: string
-  videoSrc?: string
-  posterSrc?: string
-  primaryButtonText?: string
-  primaryButtonHref?: string
-  secondaryButtonText?: string
-  secondaryButtonHref?: string
-}
+  dailyVolume?: string;
+  dailyVolumeLabel?: string;
+  headline?: string;
+  subheadline?: string;
+  description?: string;
+  videoSrc?: string;
+  posterSrc?: string;
+  primaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+};
 
 // @component: ProductTeaserCard
 export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
@@ -21,15 +21,15 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
     dailyVolume = "1,430,992,688",
     dailyVolumeLabel = "DAILY ANALYZED MESSAGES",
     headline = "The Intelligence Layer for Modern Communication",
-    subheadline = "Auralink connects every call, chat, and meeting into a unified AI layer — delivering real-time insights, tone analysis, and team alignment across your favorite tools.",
-    description = "Trusted by fast-growing teams and enterprises, Auralink powers smarter communication across 1,000+ organizations — with enterprise-grade security, multilingual analysis, and instant emotional detection.",
+    subheadline = "MindMatters connects every call, chat, and meeting into a unified AI layer — delivering real-time insights, tone analysis, and team alignment across your favorite tools.",
+    description = "Trusted by fast-growing teams and enterprises, MindMatters powers smarter communication across 1,000+ organizations — with enterprise-grade security, multilingual analysis, and instant emotional detection.",
     videoSrc = "https://cdn.sanity.io/files/1t8iva7t/production/a2cbbed7c998cf93e7ecb6dae75bab42b13139c2.mp4",
     posterSrc = "/images/design-mode/9ad78a5534a46e77bafe116ce1c38172c60dc21a-1069x1068.png",
     primaryButtonText = "Start analyzing",
     primaryButtonHref = "",
     secondaryButtonText = "View API Docs",
     secondaryButtonHref = "",
-  } = props
+  } = props;
 
   // @return
   return (
@@ -70,7 +70,8 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
                 }}
                 className="text-sm uppercase tracking-tight font-mono flex items-center gap-1"
                 style={{
-                  fontFamily: "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
+                  fontFamily:
+                    "var(--font-geist-mono), 'Geist Mono', ui-monospace, monospace",
                 }}
               >
                 {dailyVolumeLabel}
@@ -189,5 +190,5 @@ export const ProductTeaserCard = (props: ProductTeaserCardProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
