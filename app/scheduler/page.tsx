@@ -129,7 +129,7 @@ export default function SchedulerPage() {
             className="text-center mb-16"
           >
             <h1
-              className="text-[56px] leading-[60px] font-normal text-[#202020] mb-4"
+              className="text-6xl py-10 text-center font-normal text-[#202020] mb-4"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontWeight: "500",

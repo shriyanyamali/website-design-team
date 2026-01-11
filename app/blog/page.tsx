@@ -135,7 +135,7 @@ export default function BlogPage() {
             className="mb-12"
           >
             <h1
-              className="text-[56px] leading-[60px] font-normal text-[#202020] mb-4"
+              className="text-6xl py-10 text-center font-normal text-[#202020] mb-4"
               style={{
                 fontFamily: "var(--font-figtree), Figtree",
                 fontWeight: "500",
@@ -143,13 +143,7 @@ export default function BlogPage() {
             >
               Mental Health Blog
             </h1>
-            <p
-              className="text-lg leading-7 text-[#404040] max-w-2xl"
-              style={{ fontFamily: "var(--font-figtree), Figtree" }}
-            >
-              Expert articles, personal stories, and practical tips to support
-              your mental health journey.
-            </p>
+
           </motion.div>
 
           {/* Featured Section */}

@@ -139,12 +139,10 @@ export default function CommunityPage() {
             transition={{ duration: 0.8, ease: [0.645, 0.045, 0.355, 1] }}
             className="mb-12"
           >
-            <h1 className="text-[56px] leading-[60px] font-normal text-[#202020] mb-4" style={{ fontFamily: "var(--font-figtree), Figtree", fontWeight: "500" }}>
+            <h1 className="text-6xl py-10 text-center leading-[60px] font-normal text-[#202020] mb-4" style={{ fontFamily: "var(--font-figtree), Figtree", fontWeight: "500" }}>
               Community Support Forum
             </h1>
-            <p className="text-lg leading-7 text-[#404040] max-w-2xl" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
-              A safe, moderated space to connect with others, share experiences, and support each other in your mental health journey.
-            </p>
+
           </motion.div>
 
           <div className="grid lg:grid-cols-4 gap-8">

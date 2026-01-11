@@ -27,57 +27,56 @@ type FooterProps = {
 
 const defaultSections: FooterSection[] = [
   {
-    title: "Product",
+    title: "Site Links",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Integrations", href: "#integrations" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "API Docs", href: "#api" },
-      { label: "Changelog", href: "#changelog" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "#about" },
-      { label: "Careers", href: "#careers" },
-      { label: "Blog", href: "#blog" },
-      { label: "Press Kit", href: "#press" },
-      { label: "Contact", href: "#contact" },
+      { label: "Home", href: "/" },
+      { label: "Resources", href: "/resources" },
+      { label: "Get Help", href: "/get-help" },
+      { label: "Support", href: "/support" },
+      { label: "Blog", href: "/blog" },
+      { label: "Testimonials", href: "/testimonials" },
+      { label: "Scheduler", href: "/scheduler" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "#docs" },
-      { label: "Help Center", href: "#help" },
-      { label: "Community", href: "#community" },
-      { label: "Case Studies", href: "#case-studies" },
-      { label: "Webinars", href: "#webinars" },
+      {
+        label: "Suicide & Crisis Lifeline",
+        href: "https://988lifeline.org",
+      },
+      { label: "Crisis Text Line", href: "https://www.crisistextline.org" },
+      {
+        label: "Find a Therapist",
+        href: "https://www.psychologytoday.com/us/therapists",
+      },
+      {
+        label: "Mental Health Resources",
+        href: "https://www.nami.org/help",
+      },
+      { label: "International Helplines", href: "https://findahelpline.com" },
+      { label: "SAMHSA", href: "https://www.samhsa.gov/" },
     ],
   },
   {
-    title: "Legal",
+    title: "Self-Help",
     links: [
-      { label: "Privacy Policy", href: "#privacy" },
-      { label: "Terms of Service", href: "#terms" },
-      { label: "Security", href: "#security" },
-      { label: "Compliance", href: "#compliance" },
-      { label: "Cookie Policy", href: "#cookies" },
+      { label: "Coping Skills Library", href: "https://www.therapistaid.com" },
+      { label: "Mindfulness Exercises", href: "https://www.mindful.org" },
+      {
+        label: "Mental Health Articles",
+        href: "https://www.healthline.com/mental-health",
+      },
+      { label: "Self-Care Tools", href: "https://www.verywellmind.com" },
     ],
-  },
+  }
 ];
 
 export const Footer = ({
   companyName = "MindMatters",
-  tagline = "The Intelligence Layer for Modern Communication",
+  tagline = "This site provides general information about mental health disorders and resources. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. If you are experiencing a mental health crisis or emergency, please call 988 or go to your nearest emergency room immediately.",
   sections = defaultSections,
-  socialLinks = {
-    twitter: "https://twitter.com",
-    linkedin: "https://linkedin.com",
-    github: "https://github.com",
-    email: "hello@MindMatters.com",
-  },
+
   copyrightText,
 }: FooterProps) => {
   const currentYear = new Date().getFullYear();
@@ -85,9 +84,9 @@ export const Footer = ({
     copyrightText || `© ${currentYear} ${companyName}. All rights reserved.`;
   return (
     <footer className="w-full bg-[#fafafa] border-t border-[#e5e5e5]">
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
+      <div className="max-w-[1100px] mx-auto px-8 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,46 +108,6 @@ export const Footer = ({
               >
                 {tagline}
               </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-3 mt-6">
-              {socialLinks.twitter && (
-                <a
-                  href={socialLinks.twitter}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#e5e5e5] text-[#666666] hover:text-[#202020] hover:border-[#202020] transition-colors duration-150"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-              )}
-              {socialLinks.linkedin && (
-                <a
-                  href={socialLinks.linkedin}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#e5e5e5] text-[#666666] hover:text-[#202020] hover:border-[#202020] transition-colors duration-150"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-              )}
-              {socialLinks.github && (
-                <a
-                  href={socialLinks.github}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#e5e5e5] text-[#666666] hover:text-[#202020] hover:border-[#202020] transition-colors duration-150"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-              )}
-              {socialLinks.email && (
-                <a
-                  href={`mailto:${socialLinks.email}`}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#e5e5e5] text-[#666666] hover:text-[#202020] hover:border-[#202020] transition-colors duration-150"
-                  aria-label="Email"
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-              )}
             </div>
           </motion.div>
 
@@ -206,14 +165,7 @@ export const Footer = ({
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="#status"
-                className="text-sm text-[#666666] hover:text-[#202020] transition-colors duration-150"
-                style={{ fontFamily: "Figtree" }}
-              >
-                Status
-              </a>
-              <a
-                href="#sitemap"
+                href="/sitemap"
                 className="text-sm text-[#666666] hover:text-[#202020] transition-colors duration-150"
                 style={{ fontFamily: "Figtree" }}
               >
