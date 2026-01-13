@@ -131,7 +131,7 @@ export const PortfolioNavbar = () => {
             <Link
               onClick={() => handleLinkClick("#contact")}
               href="scheduler"
-              className="bg-[#156d95] border-2 border-white text-white px-[18px] rounded-full text-base font-semibold hover:bg-white hover:text-[#156d95] hover:border-[#156d95] transition-all duration-500 shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
+              className="bg-teal-600 border-2 border-white text-white px-[18px] rounded-full text-base font-semibold hover:bg-white hover:text-teal-600 hover:border-teal-600 transition-all duration-500 shadow-sm hover:shadow-md whitespace-nowrap leading-4 py-[15px]"
               style={{
                 fontFamily: "Plus Jakarta Sans, sans-serif",
               }}

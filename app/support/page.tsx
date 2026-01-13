@@ -139,10 +139,15 @@ export default function CommunityPage() {
             transition={{ duration: 0.8, ease: [0.645, 0.045, 0.355, 1] }}
             className="mb-12"
           >
-            <h1 className="text-6xl py-10 text-center leading-[60px] font-normal text-[#202020] mb-4" style={{ fontFamily: "var(--font-figtree), Figtree", fontWeight: "500" }}>
+            <h1
+              className="text-6xl py-10 text-center leading-[60px] font-normal text-[#202020] mb-4"
+              style={{
+                fontFamily: "var(--font-figtree), Figtree",
+                fontWeight: "500",
+              }}
+            >
               Community Support Forum
             </h1>
-
           </motion.div>
 
           <div className="grid lg:grid-cols-4 gap-8">
@@ -156,14 +161,17 @@ export default function CommunityPage() {
               <div className="bg-white rounded-[20px] border border-[#e5e5e5] p-6 sticky top-24">
                 <Button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-[#156d95] hover:bg-[#156d95]/90 mb-6 gap-2"
+                  className="w-full bg-teal-600 hover:bg-teal-700 mb-6 gap-2"
                   style={{ fontFamily: "var(--font-figtree), Figtree" }}
                 >
                   <Plus size={18} />
                   New Discussion
                 </Button>
 
-                <h3 className="font-normal text-[#202020] mb-4" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                <h3
+                  className="font-normal text-[#202020] mb-4"
+                  style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                >
                   Categories
                 </h3>
                 <div className="space-y-2">
@@ -171,7 +179,7 @@ export default function CommunityPage() {
                     onClick={() => setSelectedCategory(null)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                       selectedCategory === null
-                        ? "bg-[#e5e5e5] text-[#156d95] font-normal"
+                        ? "bg-teal-50 text-teal-700 font-normal border border-teal-200"
                         : "text-[#202020] hover:bg-[#fafafa]"
                     }`}
                     style={{ fontFamily: "var(--font-figtree), Figtree" }}
@@ -184,7 +192,7 @@ export default function CommunityPage() {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                         selectedCategory === category
-                          ? "bg-[#e5e5e5] text-[#156d95] font-normal"
+                          ? "bg-teal-50 text-teal-700 font-normal border border-teal-200"
                           : "text-[#202020] hover:bg-[#fafafa]"
                       }`}
                       style={{ fontFamily: "var(--font-figtree), Figtree" }}
@@ -195,11 +203,15 @@ export default function CommunityPage() {
                 </div>
 
                 <div className="mt-8 p-4 bg-[#fafafa] rounded-[12px] border border-[#e5e5e5]">
-                  <h4 className="font-normal text-[#202020] mb-2" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <h4
+                    className="font-normal text-[#202020] mb-2"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     Community Guidelines
                   </h4>
                   <p className="text-xs text-[#404040]">
-                    Be respectful, supportive, and kind. No hate speech or spam. Professional advice should come from licensed practitioners.
+                    Be respectful, supportive, and kind. No hate speech or spam.
+                    Professional advice should come from licensed practitioners.
                   </p>
                 </div>
               </div>
@@ -223,7 +235,7 @@ export default function CommunityPage() {
                   placeholder="Search discussions..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#156d95]"
+                  className="w-full pl-12 pr-4 py-3 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   style={{ fontFamily: "var(--font-figtree), Figtree" }}
                 />
               </div>
@@ -241,12 +253,15 @@ export default function CommunityPage() {
                   ))
                 ) : (
                   <div className="p-12 text-center">
-                    <p className="text-[#404040] mb-4" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                    <p
+                      className="text-[#404040] mb-4"
+                      style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                    >
                       No discussions found.
                     </p>
                     <Button
                       onClick={() => setIsModalOpen(true)}
-                      className="bg-[#156d95] hover:bg-[#156d95]/90"
+                      className="bg-teal-600 hover:bg-teal-700"
                       style={{ fontFamily: "var(--font-figtree), Figtree" }}
                     >
                       Start the first one!
@@ -258,26 +273,44 @@ export default function CommunityPage() {
               {/* Stats */}
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="bg-white rounded-[20px] p-6 text-center border border-[#e5e5e5]">
-                  <p className="text-3xl font-normal text-[#156d95]" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-3xl font-normal text-teal-600"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     {posts.length}
                   </p>
-                  <p className="text-sm text-[#404040] mt-2" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-sm text-[#404040] mt-2"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     Total Discussions
                   </p>
                 </div>
                 <div className="bg-white rounded-[20px] p-6 text-center border border-[#e5e5e5]">
-                  <p className="text-3xl font-normal text-[#10b981]" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-3xl font-normal text-cyan-600"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     {posts.reduce((sum, p) => sum + p.replies, 0)}
                   </p>
-                  <p className="text-sm text-[#404040] mt-2" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-sm text-[#404040] mt-2"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     Total Responses
                   </p>
                 </div>
                 <div className="bg-white rounded-[20px] p-6 text-center border border-[#e5e5e5]">
-                  <p className="text-3xl font-normal text-[#156d95]" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-3xl font-normal text-teal-600"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     2.3K+
                   </p>
-                  <p className="text-sm text-[#404040] mt-2" style={{ fontFamily: "var(--font-figtree), Figtree" }}>
+                  <p
+                    className="text-sm text-[#404040] mt-2"
+                    style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  >
                     Community Members
                   </p>
                 </div>

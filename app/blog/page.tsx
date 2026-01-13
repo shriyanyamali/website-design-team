@@ -143,7 +143,6 @@ export default function BlogPage() {
             >
               Mental Health Blog
             </h1>
-
           </motion.div>
 
           {/* Featured Section */}
@@ -188,7 +187,7 @@ export default function BlogPage() {
                     onClick={() => setSelectedCategory(null)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors text-sm ${
                       selectedCategory === null
-                        ? "bg-[#e5e5e5] text-[#156d95] font-normal"
+                        ? "bg-teal-50 text-teal-700 font-normal border border-teal-200"
                         : "text-[#202020] hover:bg-[#fafafa]"
                     }`}
                     style={{ fontFamily: "var(--font-figtree), Figtree" }}
@@ -201,7 +200,7 @@ export default function BlogPage() {
                       onClick={() => setSelectedCategory(category)}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors text-sm ${
                         selectedCategory === category
-                          ? "bg-[#e5e5e5] text-[#156d95] font-normal"
+                          ? "bg-teal-50 text-teal-700 font-normal border border-teal-200"
                           : "text-[#202020] hover:bg-[#fafafa]"
                       }`}
                       style={{ fontFamily: "var(--font-figtree), Figtree" }}
@@ -245,7 +244,7 @@ export default function BlogPage() {
                     placeholder="Search articles..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#156d95]"
+                    className="w-full pl-12 pr-4 py-3 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     style={{ fontFamily: "var(--font-figtree), Figtree" }}
                   />
                 </div>
@@ -255,7 +254,7 @@ export default function BlogPage() {
                     onClick={() => setViewMode("grid")}
                     className={`px-3 py-2 rounded transition-colors ${
                       viewMode === "grid"
-                        ? "bg-[#e5e5e5] text-[#156d95]"
+                        ? "bg-teal-50 text-teal-700 border border-teal-200"
                         : "text-[#9a9a9a] hover:bg-[#fafafa]"
                     }`}
                   >
@@ -265,7 +264,7 @@ export default function BlogPage() {
                     onClick={() => setViewMode("list")}
                     className={`px-3 py-2 rounded transition-colors ${
                       viewMode === "list"
-                        ? "bg-[#e5e5e5] text-[#156d95]"
+                        ? "bg-teal-50 text-teal-700 border border-teal-200"
                         : "text-[#9a9a9a] hover:bg-[#fafafa]"
                     }`}
                   >
@@ -309,7 +308,7 @@ export default function BlogPage() {
               <div className="flex justify-center gap-2 mt-12">
                 <Button variant="outline">Previous</Button>
                 <Button
-                  className="bg-[#156d95] hover:bg-[#156d95]/90"
+                  className="bg-teal-600 hover:bg-teal-700"
                   style={{ fontFamily: "var(--font-figtree), Figtree" }}
                 >
                   1

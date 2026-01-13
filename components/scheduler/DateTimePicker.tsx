@@ -68,8 +68,8 @@ export const DateTimePicker = ({
               onClick={() => setSelectedTime(time)}
               className={`py-2 px-3 rounded-lg border transition-all ${
                 selectedTime === time
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "border-[#e5e5e5] hover:border-blue-600 text-[#202020]"
+                  ? "bg-teal-600 text-white border-teal-600"
+                  : "border-[#e5e5e5] hover:border-teal-600 text-[#202020]"
               }`}
             >
               {time}
@@ -86,7 +86,7 @@ export const DateTimePicker = ({
         className={`w-full py-3 rounded-lg font-semibold transition-all ${
           isDisabled
             ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-            : "bg-blue-600 text-white hover:bg-blue-700"
+            : "bg-teal-600 text-white hover:bg-teal-700"
         }`}
       >
         Confirm Selection

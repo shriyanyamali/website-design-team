@@ -40,8 +40,8 @@ export const BookingForm = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-sm text-blue-900">
+      <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+        <p className="text-sm text-teal-900">
           <span className="font-semibold">
             Appointment with {counselorName}
           </span>
@@ -163,7 +163,7 @@ export const BookingForm = ({
         whileTap={{ scale: !isLoading ? 0.98 : 1 }}
         type="submit"
         disabled={isLoading}
-        className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50"
+        className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50"
       >
         {isLoading ? "Booking..." : "Book Appointment"}
       </motion.button>

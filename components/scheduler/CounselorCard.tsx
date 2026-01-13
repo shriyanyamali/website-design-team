@@ -30,7 +30,7 @@ export const CounselorCard = ({ counselor, onSelect }: CounselorCardProps) => {
     >
       <div className="flex gap-4">
         {/* Avatar */}
-        <div className="h-20 w-20 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex-shrink-0 flex items-center justify-center text-white font-bold text-2xl">
+        <div className="h-20 w-20 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex-shrink-0 flex items-center justify-center text-white font-bold text-2xl">
           {counselor.name.charAt(0)}
         </div>
 
@@ -68,7 +68,7 @@ export const CounselorCard = ({ counselor, onSelect }: CounselorCardProps) => {
             {counselor.specialties.slice(0, 3).map((specialty) => (
               <span
                 key={specialty}
-                className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"
+                className="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded border border-teal-200"
               >
                 {specialty}
               </span>
@@ -78,9 +78,8 @@ export const CounselorCard = ({ counselor, onSelect }: CounselorCardProps) => {
           {/* Button */}
           <Button
             onClick={() => onSelect(counselor.id)}
-            variant="default"
             size="sm"
-            className="w-full"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white"
           >
             Schedule with {counselor.name.split(" ")[0]}
           </Button>
