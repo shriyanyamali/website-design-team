@@ -35,7 +35,15 @@ export const BlogCard = ({
         onClick={onClick}
         className="border-b border-[#e5e5e5] p-6 cursor-pointer transition-colors last:border-0 flex gap-6 items-start group"
       >
-        <div className="h-28 w-40 rounded-lg bg-gradient-to-br from-teal-400 to-cyan-500 flex-shrink-0" />
+        <div className="h-28 w-40 rounded-lg overflow-hidden bg-gradient-to-br from-teal-400 to-cyan-500 flex-shrink-0">
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          ) : null}
+        </div>
 
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
@@ -82,7 +90,15 @@ export const BlogCard = ({
       className="bg-white rounded-lg border border-[#e5e5e5] overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
     >
       {/* Image */}
-      <div className="h-48 bg-gradient-to-br from-teal-400 to-cyan-500" />
+      <div className="h-48 bg-gradient-to-br from-teal-400 to-cyan-500 overflow-hidden">
+        {post.image ? (
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
+        ) : null}
+      </div>
 
       {/* Content */}
       <div className="p-6">

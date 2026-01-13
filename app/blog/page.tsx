@@ -22,12 +22,14 @@ const BLOG_POSTS: BlogPost[] = [
     title: "Understanding Anxiety: Types and Triggers",
     excerpt:
       "A comprehensive guide to different types of anxiety disorders and how to identify your personal triggers.",
-    content: "",
+    content:
+      "Anxiety disorders can show up as generalized worry, social avoidance, panic attacks, or specific phobias. Track patterns like time of day, caffeine intake, social situations, and sleep quality to spot triggers. Pair awareness with grounding techniques (5-4-3-2-1 sensory check) and paced breathing. If anxiety disrupts work, school, or sleep for more than two weeks, consider a professional evaluation for GAD, social anxiety, panic disorder, or phobias.",
     author: "Dr. Sarah Johnson",
     category: "Mental Health Basics",
     date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
     readTime: 8,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&q=80&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -35,12 +37,14 @@ const BLOG_POSTS: BlogPost[] = [
     title: "5 Mindfulness Techniques for Daily Stress",
     excerpt:
       "Simple yet powerful mindfulness practices you can incorporate into your daily routine.",
-    content: "",
+    content:
+      "Start with 3-minute breathing, box breathing (4-4-4-4), and body scans to interrupt stress loops. Pair short practices with daily anchors: when you pour coffee, before emails, and after meetings. For movement-based mindfulness, try mindful walks focusing on sounds and footfalls. If racing thoughts persist, set a 10-minute timer, label thoughts without judgment, and return to breath.",
     author: "Emma Wilson",
     category: "Coping Strategies",
     date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
     readTime: 6,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=80&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -48,48 +52,56 @@ const BLOG_POSTS: BlogPost[] = [
     title: "My Journey to Recovery: A Personal Story",
     excerpt:
       "How I overcame depression and learned to live a fulfilling life again.",
-    content: "",
+    content:
+      "Recovery was not linear: good weeks followed by setbacks. What helped most was a routine built on sleep hygiene, structured mornings, and weekly therapy. Tracking mood alongside sleep and meals revealed patterns. Medication plus CBT tools (thought records, behavioral activation) helped me re-engage with hobbies. Sharing with friends reduced shame and built accountability.",
     author: "Anonymous",
     category: "Personal Stories",
     date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
     readTime: 10,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "4",
     title: "Cognitive Behavioral Therapy (CBT) Explained",
     excerpt:
       "Understanding one of the most effective therapeutic approaches for anxiety and depression.",
-    content: "",
+    content:
+      "CBT links thoughts, feelings, and behaviors. Core skills include cognitive restructuring (challenging unhelpful thoughts), exposure (approaching avoided situations gradually), and behavioral activation (planning rewarding, values-based actions). Track automatic thoughts, rate belief strength, and test them against evidence. Small, repeated exposures retrain your threat response.",
     author: "Dr. Michael Chen",
     category: "Treatment Options",
     date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
     readTime: 9,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "5",
     title: "Building Mental Health into Your Workday",
     excerpt:
       "Practical tips for maintaining mental wellness while managing a demanding job.",
-    content: "",
+    content:
+      "Protect 10-minute buffers before/after meetings, stack similar tasks to reduce context switching, and schedule micro-breaks every 60–90 minutes. Use a daily priority list with one must-do, two should-do items. Set notification windows to limit constant pings. Pair lunch with a short walk or stretch to reset your nervous system.",
     author: "James Rodriguez",
     category: "Workplace Wellness",
     date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
     readTime: 7,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "6",
     title: "The Connection Between Sleep and Mental Health",
     excerpt:
       "Why quality sleep is crucial for your mental health and how to improve sleep hygiene.",
-    content: "",
+    content:
+      "Sleep debt amplifies anxiety and lowers mood. Aim for consistent bed/wake times, a 60-minute wind-down without screens, and a cool, dark room. If you can’t sleep after 20 minutes, get up, read something calm, and return when sleepy. Track caffeine timing and daylight exposure—both strongly impact sleep drive.",
     author: "Dr. Sarah Johnson",
     category: "Mental Health Basics",
     date: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
     readTime: 8,
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1511296265581-6ae87c5b3ac7?w=900&q=80&auto=format&fit=crop",
   },
 ];
 
@@ -110,6 +122,10 @@ export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const pageSize = 4;
 
   const filteredPosts = BLOG_POSTS.filter((post) => {
     const matchesCategory =
@@ -121,6 +137,16 @@ export default function BlogPage() {
   });
 
   const featuredPosts = BLOG_POSTS.filter((p) => p.featured);
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+  const pageSafe = Math.min(Math.max(currentPage, 1), totalPages);
+  const paginatedPosts = filteredPosts.slice(
+    (pageSafe - 1) * pageSize,
+    pageSafe * pageSize
+  );
+
+  const handleOpenPost = (post: BlogPost) => setSelectedPost(post);
+  const handleClosePost = () => setSelectedPost(null);
+  const handlePageChange = (page: number) => setCurrentPage(page);
 
   return (
     <>
@@ -161,7 +187,11 @@ export default function BlogPage() {
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {featuredPosts.map((post) => (
-                  <BlogCard key={post.id} post={post} onClick={() => {}} />
+                  <BlogCard
+                    key={post.id}
+                    post={post}
+                    onClick={() => handleOpenPost(post)}
+                  />
                 ))}
               </div>
             </motion.div>
@@ -197,7 +227,10 @@ export default function BlogPage() {
                   {CATEGORIES.map((category) => (
                     <button
                       key={category}
-                      onClick={() => setSelectedCategory(category)}
+                      onClick={() => {
+                        setSelectedCategory(category);
+                        setCurrentPage(1);
+                      }}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors text-sm ${
                         selectedCategory === category
                           ? "bg-teal-50 text-teal-700 font-normal border border-teal-200"
@@ -243,7 +276,10 @@ export default function BlogPage() {
                     type="text"
                     placeholder="Search articles..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setCurrentPage(1);
+                    }}
                     className="w-full pl-12 pr-4 py-3 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                     style={{ fontFamily: "var(--font-figtree), Figtree" }}
                   />
@@ -276,17 +312,21 @@ export default function BlogPage() {
               {/* Articles */}
               {viewMode === "grid" ? (
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  {filteredPosts.map((post) => (
-                    <BlogCard key={post.id} post={post} onClick={() => {}} />
+                  {paginatedPosts.map((post) => (
+                    <BlogCard
+                      key={post.id}
+                      post={post}
+                      onClick={() => handleOpenPost(post)}
+                    />
                   ))}
                 </div>
               ) : (
                 <div className="bg-white rounded-[20px] border border-[#e5e5e5] overflow-hidden">
-                  {filteredPosts.map((post) => (
+                  {paginatedPosts.map((post) => (
                     <BlogCard
                       key={post.id}
                       post={post}
-                      onClick={() => {}}
+                      onClick={() => handleOpenPost(post)}
                       variant="list"
                     />
                   ))}
@@ -306,21 +346,98 @@ export default function BlogPage() {
 
               {/* Pagination */}
               <div className="flex justify-center gap-2 mt-12">
-                <Button variant="outline">Previous</Button>
                 <Button
-                  className="bg-teal-600 hover:bg-teal-700"
-                  style={{ fontFamily: "var(--font-figtree), Figtree" }}
+                  variant="outline"
+                  disabled={pageSafe === 1}
+                  onClick={() => handlePageChange(pageSafe - 1)}
                 >
-                  1
+                  Previous
                 </Button>
-                <Button variant="outline">2</Button>
-                <Button variant="outline">3</Button>
-                <Button variant="outline">Next</Button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                  (page) => (
+                    <Button
+                      key={page}
+                      variant={page === pageSafe ? "default" : "outline"}
+                      className={
+                        page === pageSafe ? "bg-teal-600 hover:bg-teal-700" : ""
+                      }
+                      onClick={() => handlePageChange(page)}
+                    >
+                      {page}
+                    </Button>
+                  )
+                )}
+                <Button
+                  variant="outline"
+                  disabled={pageSafe === totalPages}
+                  onClick={() => handlePageChange(pageSafe + 1)}
+                >
+                  Next
+                </Button>
               </div>
             </motion.div>
           </div>
         </div>
       </main>
+
+      {selectedPost && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center px-4">
+          <div className="bg-white max-w-3xl w-full rounded-2xl shadow-2xl overflow-hidden">
+            <div className="h-64 bg-gradient-to-br from-teal-500 to-cyan-600 relative">
+              <img
+                src={selectedPost.image}
+                alt={selectedPost.title}
+                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 text-white space-y-2">
+                <span className="text-xs font-semibold bg-white/20 px-2 py-1 rounded">
+                  {selectedPost.category}
+                </span>
+                <h3 className="text-3xl font-bold leading-tight">
+                  {selectedPost.title}
+                </h3>
+                <p className="text-sm text-white/90">
+                  {selectedPost.author} •{" "}
+                  {selectedPost.date.toLocaleDateString()} •{" "}
+                  {selectedPost.readTime} min read
+                </p>
+              </div>
+              <button
+                onClick={handleClosePost}
+                className="absolute top-4 right-4 bg-white/80 text-teal-700 rounded-full px-3 py-2 text-sm font-semibold hover:bg-white"
+              >
+                Close
+              </button>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <p className="text-lg leading-relaxed text-[#202020]">
+                {selectedPost.content}
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 text-sm text-[#404040]">
+                <div className="bg-teal-50 border border-teal-100 rounded-lg p-4">
+                  <p className="font-semibold text-teal-700">Try this</p>
+                  <p className="mt-2">
+                    Jot one takeaway you can apply today, and schedule a
+                    10-minute check-in this week to reflect on it.
+                  </p>
+                </div>
+                <div className="bg-cyan-50 border border-cyan-100 rounded-lg p-4">
+                  <p className="font-semibold text-cyan-700">
+                    Need more support?
+                  </p>
+                  <p className="mt-2">
+                    Visit our Resources or Scheduler pages to connect with a
+                    counselor for personalized guidance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </>
   );
