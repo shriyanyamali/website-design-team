@@ -88,7 +88,7 @@ export const NewThreadModal = ({
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-[#e5e5e5] rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -123,7 +123,7 @@ export const NewThreadModal = ({
             <Button
               type="submit"
               disabled={!title.trim() || !content.trim() || isLoading}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-teal-600 hover:bg-teal-700"
             >
               {isLoading ? "Posting..." : "Post Discussion"}
             </Button>

@@ -35,12 +35,12 @@ export const ForumThread = ({
       whileHover={{ backgroundColor: featured ? undefined : "#f9fafb" }}
       onClick={onClick}
       className={`border-b border-[#e5e5e5] p-6 cursor-pointer transition-colors last:border-0 ${
-        featured ? "bg-blue-50 border-l-4 border-l-blue-500" : ""
+        featured ? "bg-teal-50 border-l-4 border-l-teal-600" : ""
       }`}
     >
       <div className="flex items-start gap-4">
         {/* Avatar */}
-        <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex-shrink-0 flex items-center justify-center text-white font-bold">
+        <div className="h-12 w-12 rounded-full bg-gradient-to-br from-teal-500 to-cyan-600 flex-shrink-0 flex items-center justify-center text-white font-bold">
           {post.authorAvatar}
         </div>
 
@@ -53,7 +53,7 @@ export const ForumThread = ({
                   📌 PINNED
                 </span>
               )}
-              <h3 className="text-lg font-semibold text-[#202020] hover:text-blue-600 transition-colors line-clamp-2">
+              <h3 className="text-lg font-semibold text-[#202020] hover:text-teal-600 transition-colors line-clamp-2">
                 {post.title}
               </h3>
               <div className="flex items-center gap-3 mt-2 text-sm text-muted-foreground">
@@ -61,7 +61,7 @@ export const ForumThread = ({
                   {post.author}
                 </span>
                 <span className="text-xs">in</span>
-                <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                <span className="bg-teal-50 text-teal-700 px-2 py-1 rounded border border-teal-200">
                   {post.category}
                 </span>
                 <span className="text-xs">
@@ -78,11 +78,11 @@ export const ForumThread = ({
 
           {/* Stats */}
           <div className="flex items-center gap-6 mt-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <div className="flex items-center gap-2 hover:text-teal-600 transition-colors">
               <MessageCircle size={16} />
               <span>{post.replies} replies</span>
             </div>
-            <div className="flex items-center gap-2 hover:text-green-600 transition-colors">
+            <div className="flex items-center gap-2 hover:text-cyan-600 transition-colors">
               <ThumbsUp size={16} />
               <span>{post.likes} likes</span>
             </div>
