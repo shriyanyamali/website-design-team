@@ -29,7 +29,7 @@ const BLOG_POSTS: BlogPost[] = [
     date: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
     readTime: 8,
     image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1631883055788-5a5b15fae074?w=900&q=80&auto=format&fit=crop",
     featured: true,
   },
   {
@@ -73,7 +73,7 @@ const BLOG_POSTS: BlogPost[] = [
     date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
     readTime: 9,
     image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1709651669999-57741c9bf085?w=900&q=80&auto=format&fit=crop",
   },
   {
     id: "5",
@@ -101,7 +101,7 @@ const BLOG_POSTS: BlogPost[] = [
     date: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
     readTime: 8,
     image:
-      "https://images.unsplash.com/photo-1511296265581-6ae87c5b3ac7?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1585128719715-46776b56a0d1?w=900&q=80&auto=format&fit=crop",
   },
 ];
 
