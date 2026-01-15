@@ -156,14 +156,14 @@ export default function SchedulerPage() {
                       animate={{
                         backgroundColor:
                           step === s
-                            ? "#156d95"
+                            ? "rgb(20 184 166)"
                             : [
                                   "counselor",
                                   "datetime",
                                   "form",
                                   "confirmation",
                                 ].indexOf(step) > index
-                              ? "#10b981"
+                              ? "rgb(6 182 212)"
                               : "#e5e5e5",
                       }}
                       className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold"
@@ -243,7 +243,7 @@ export default function SchedulerPage() {
 
             {step === "confirmation" && (
               <div className="bg-white rounded-[20px] border border-[#e5e5e5] p-12 text-center">
-                <div className="w-16 h-16 bg-[#10b981] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -306,7 +306,7 @@ export default function SchedulerPage() {
 
                 <button
                   onClick={handleBookAnother}
-                  className="text-white bg-[#156d95] rounded-full px-[18px] py-[15px] text-base leading-4 whitespace-nowrap transition-all duration-150 ease-[cubic-bezier(0.455,0.03,0.515,0.955)] hover:rounded-2xl"
+                  className="px-8 py-4 bg-teal-600 text-white rounded-xl font-bold text-lg hover:bg-teal-700 transition-colors shadow-lg"
                   style={{
                     fontFamily: "var(--font-figtree), Figtree",
                     fontWeight: "500",

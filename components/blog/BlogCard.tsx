@@ -35,11 +35,19 @@ export const BlogCard = ({
         onClick={onClick}
         className="border-b border-[#e5e5e5] p-6 cursor-pointer transition-colors last:border-0 flex gap-6 items-start group"
       >
-        <div className="h-28 w-40 rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 flex-shrink-0" />
+        <div className="h-28 w-40 rounded-lg overflow-hidden bg-gradient-to-br from-teal-400 to-cyan-500 flex-shrink-0">
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          ) : null}
+        </div>
 
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-1 rounded">
+            <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-1 rounded border border-teal-200">
               {post.category}
             </span>
             <span className="text-xs text-muted-foreground">
@@ -47,7 +55,7 @@ export const BlogCard = ({
             </span>
           </div>
 
-          <h3 className="text-xl font-semibold text-[#202020] group-hover:text-blue-600 transition-colors mb-2">
+          <h3 className="text-xl font-semibold text-[#202020] group-hover:text-teal-600 transition-colors mb-2">
             {post.title}
           </h3>
 
@@ -68,7 +76,7 @@ export const BlogCard = ({
         </div>
 
         <ArrowRight
-          className="text-gray-300 group-hover:text-blue-600 transition-colors flex-shrink-0"
+          className="text-gray-300 group-hover:text-teal-600 transition-colors flex-shrink-0"
           size={20}
         />
       </motion.div>
@@ -82,12 +90,20 @@ export const BlogCard = ({
       className="bg-white rounded-lg border border-[#e5e5e5] overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
     >
       {/* Image */}
-      <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500" />
+      <div className="h-48 bg-gradient-to-br from-teal-400 to-cyan-500 overflow-hidden">
+        {post.image ? (
+          <img
+            src={post.image}
+            alt={post.title}
+            className="w-full h-full object-cover"
+          />
+        ) : null}
+      </div>
 
       {/* Content */}
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-1 rounded">
+          <span className="text-xs font-semibold bg-teal-50 text-teal-700 px-2 py-1 rounded border border-teal-200">
             {post.category}
           </span>
           <span className="text-xs text-muted-foreground">
